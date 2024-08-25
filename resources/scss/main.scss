@@ -1,0 +1,167 @@
+@import "./bootstrap.min.scss";
+@import "openplayerjs/dist/openplayer.min.css";
+@import './article.scss';
+
+/* arabic */
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/changa/v20/2-c79JNi2YuVOUcOarRPgnNGooxCZ62xcjLj9ytf.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/changa/v20/2-c79JNi2YuVOUcOarRPgnNGooxCZ62xcjnj9ytf.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Changa';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/changa/v20/2-c79JNi2YuVOUcOarRPgnNGooxCZ62xcjfj9w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+#mainNav {
+  background-color: #babc4fe8;
+}
+
+body {
+  background: url('/img/motif_bg.svg') repeat;
+  font-family: 'Changa', sans-serif;
+}
+
+.site-heading {
+  font-family: 'Changa', sans-serif;
+  margin-top: 40px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-family: 'Changa', sans-serif;
+  color: #FFF;
+}
+
+.header__title_content {
+  text-align: center;
+  margin-top: 50px;
+  line-height: 50px;
+  font-family: 'Changa', sans-serif;
+
+  & img {
+    margin-bottom: 30px;
+    width: 400px;
+  }
+}
+
+#player_vue {
+  width: 100%;
+}
+
+.player__module {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  & img {
+    width: 200px;
+  }
+}
+
+.custom_form__login {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: auto;
+  margin-top: 50px;
+  width: 500px;
+  padding: 20px;
+}
+
+.custom_login_btn {
+  background-color: #babc4fe8;
+  border-color: #babc4fe8;
+
+  & :hover {
+    background-color: #babc4fe8;
+  }
+}
+
+.list__article__radio {
+  margin: 20px 0px;
+  padding: 20px;
+  border: 4px #aabc4f solid;
+  background-color: #ab905152;
+}
+
+.custom__radio__card {
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  border-radius: 0px;
+  max-height: 250px;
+}
+
+.custom__radio__btn {
+  background: #ab9051;
+  border-radius: 0px;
+  border: 1px solid #ab9051;
+  padding: 10px 10px;
+  margin-top: 20px;
+  &:hover {
+    background: #c09e50b0;
+    border: 1px solid #c09e50b0;
+  }
+}
+
+.program__wrapper {
+  display: flex;
+  background-color: #aabc4f;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px;
+  color: #ffffff;
+}
+
+.program__thumb img {
+  width: 60px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.program__title {
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+}
+
+.program__title {
+  font-weight: bold;
+  padding: 5px;
+  width: 100%;
+}
+.program__episode__number {
+  background-color: #1c2006;
+  vertical-align: middle;
+  margin: auto;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 0 5px;
+  height: 30px;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.form-error {
+  border-color: #dc3545;
+}

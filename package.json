@@ -1,0 +1,23 @@
+{
+  "name": "vite-js",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.1",
+    "jquery": "^3.6.0",
+    "openplayerjs": "^2.13.0",
+    "sass": "^1.54.9",
+    "turbolinks": "^5.2.0",
+    "vue": "^3.2.37",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.0"
+  }
+}
