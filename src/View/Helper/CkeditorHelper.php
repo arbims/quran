@@ -37,7 +37,7 @@ class CkeditorHelper extends Helper
         $lines = [];
 
         if (!$ckEditorUrl) {
-            $ckEditorUrl = '//cdn.ckeditor.com/4.6.1/standard/ckeditor.js';
+            $ckEditorUrl = '../admin/js/ckeditor/ckeditor.js';
         }
 
         $lines[] = $this->Html->script($ckEditorUrl);
@@ -51,10 +51,10 @@ class CkeditorHelper extends Helper
 
         $ckEditorOptions = [
             'language' => 'ar',
-            'uiColor' => '#9AB8F3',
-            'filebrowserBrowseUrl'=> '/img',
-            'filebrowserUploadUrl' => '/admin/images/uploads'
+            'filebrowserBrowseUrl'=> '/elfinder',
+            'filebrowserUploadUrl' => '/uploads'
         ];
+        $ckEditorPlugins = [['codesnippet']];
         $lines[] = $this->generateScript($input, $ckEditorOptions, $ckEditorPlugins);
 
         return implode(PHP_EOL, $lines);
@@ -82,7 +82,6 @@ class CkeditorHelper extends Helper
 
             foreach ($plugins as $plugin_data) {
                 $extraPlugins = explode(',', $options['extraPlugins']);
-
                 $pluginIsAlreadyLoaded = false;
                 foreach ($extraPlugins as $extraPlugin) {
                     if ($extraPlugin == $plugin_data[0]) {
@@ -101,8 +100,8 @@ class CkeditorHelper extends Helper
                 $script .= 'CKEDITOR.plugins.addExternal(\'';
                 $script .= $plugin_data[0];
                 $script .= '\', \'';
-                $script .= $plugin_data[1];
-                $script .= '\', \'';
+                // $script .= $plugin_data[1];
+                // $script .= '\', \'';
 
                 if (key_exists(2, $plugin_data)) {
                     $script .= $plugin_data[2];
@@ -112,7 +111,7 @@ class CkeditorHelper extends Helper
             }
         }
 
-        $script .= 'CKEDITOR.replace(\'';
+        $script .= 'globalCKEditor  = CKEDITOR.replace(\'';
         $script .= $input;
         $script .= "'";
 
@@ -127,8 +126,8 @@ class CkeditorHelper extends Helper
         }
 
         $script .= ');';
-        $script .= '</script>';
-
+        $script .= '
+        </script>';
         return $script;
     }
 

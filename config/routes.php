@@ -45,7 +45,10 @@ return static function (RouteBuilder $routes) {
     $routes->setRouteClass(DashedRoute::class);
 
     $routes->scope('/', function (RouteBuilder $builder) {
-
+        $builder->connect('/elfinder', ['controller' => 'Elfinder', 'action' => 'index'])
+        ->setExtensions(['json'])
+        ->setMethods(['GET']);
+        $builder->connect('/elfinder/connect', ['controller' => 'Elfinder', 'action' => 'connect']);
         $builder->prefix('Admin', function ($routes) {
             $routes->setExtensions(['json', 'xml']);
             // Because you are in the admin scope,
