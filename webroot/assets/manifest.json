@@ -1,0 +1,14 @@
+{
+  "js/main.js": {
+    "file": "main.js.de852ae6.js",
+    "src": "js/main.js",
+    "isEntry": true,
+    "css": [
+      "main.babc90c6.css"
+    ]
+  },
+  "js/main.css": {
+    "file": "main.babc90c6.css",
+    "src": "js/main.css"
+  }
+}

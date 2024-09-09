@@ -1,0 +1,9 @@
+.title__table {
+    padding: 10px 0px;
+}
+.close {
+    float: right;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}

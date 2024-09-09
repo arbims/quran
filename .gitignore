@@ -5,6 +5,10 @@
 /logs/*
 /tmp/*
 /vendor/*
+/webroot/elfinder/*
+/webroot/img/*
+/webroot/admin/js/ckeditor/*
+
 # OS generated files #
 ######################
 .DS_Store
@@ -22,7 +26,7 @@ Thumbs.db
 # Tool specific files #
 #######################
 # PHPUnit
-.phpunit.result.cache
+.phpunit.cache
 tests.sqlite
 # vim
 *~
@@ -50,7 +54,4 @@ nbproject/*
 # yarn
 yarn-debug.log
 yarn-error.log
-/webroot/*
-/webroot/log.html
-composer.lock
 yarn.lock
