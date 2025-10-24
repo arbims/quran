@@ -34,9 +34,8 @@ class UsersController extends AppController {
 
 
 	/**
-	 * login
-	 *
-	 * @return void
+	 * Summary of login
+	 * @return Response|null
 	 */
 	public function login(){
 		$this->set('title', 'Connexion');
@@ -53,6 +52,7 @@ class UsersController extends AppController {
 			return $this->redirect($this->referer());
 		}
 	}
+
 
 	/**
 	 * logout
