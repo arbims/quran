@@ -14,16 +14,9 @@ use App\Model\Table\PostsTable;
 class PostsController extends AppController
 {
 
-  public $paginate = [
+  public array $paginate = [
     'limit' => 10,
   ];
-
-  public function initialize(): void
-  {
-    parent::initialize();
-    $this->loadComponent('RequestHandler');
-    $this->loadComponent('Paginator');
-  }
 
 
   /**

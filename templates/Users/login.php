@@ -1,8 +1,9 @@
+<?php debug($_SESSION); ?>
 <?php echo $this->Form->create(null, ['class' => 'custom_form__login']) ?>
   <!-- Email input -->
   <div class="form-outline mb-4">
   <label class="form-label" for="form2Example1">البريد الإلكتروني </label>
-    <?php echo $this->Form->control('email', ['class' => 'form-control', 'placeholder' => 'البريد الإلكتروني', 'type' => 'text', 'label' => false]) ?> 
+    <?php echo $this->Form->control('emailOrUsername', ['class' => 'form-control', 'placeholder' => 'البريد الإلكتروني', 'type' => 'text', 'label' => false]) ?> 
   </div>
 
   <!-- Password input -->

@@ -7,18 +7,18 @@ use Cake\View\Helper;
 use Cake\View\View;
 
 /**
- * Ckeditor helper
+ * Ckedtiro helper
  */
 class CkeditorHelper extends Helper
 {
-    public $helpers = ['Html', 'Form'];
+    protected array $helpers = ['Html', 'Form'];
 
     /**
      * Default configuration.
      *
      * @var array<string, mixed>
      */
-    protected $_defaultConfig = [];
+    protected array $_defaultConfig = [];
 
      /**
     * Extention of the Form Helper to insert CKEditor for a form input
@@ -130,5 +130,4 @@ class CkeditorHelper extends Helper
         </script>';
         return $script;
     }
-
 }

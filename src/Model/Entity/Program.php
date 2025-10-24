@@ -29,7 +29,7 @@ class Program extends Entity
      *
      * @var array<string, bool>
      */
-    protected $_accessible = [
+    protected array $_accessible = [
         'title' => true,
         'slug' => true,
         'image' => true,

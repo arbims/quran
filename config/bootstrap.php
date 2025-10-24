@@ -40,12 +40,16 @@ use Cake\Datasource\ConnectionManager;
 use Cake\Error\ErrorTrap;
 use Cake\Error\ExceptionTrap;
 use Cake\Http\ServerRequest;
-use Cake\I18n\I18n;
 use Cake\Log\Log;
 use Cake\Mailer\Mailer;
 use Cake\Mailer\TransportFactory;
 use Cake\Routing\Router;
 use Cake\Utility\Security;
+
+/**
+ * Load global functions.
+ */
+require CAKE . 'functions.php';
 
 /*
  * See https://github.com/josegonzalez/php-dotenv for API details.
@@ -98,14 +102,14 @@ if (file_exists(CONFIG . 'app_local.php')) {
  */
 if (Configure::read('debug')) {
     Configure::write('Cache._cake_model_.duration', '+2 minutes');
-    Configure::write('Cache._cake_core_.duration', '+2 minutes');
+    Configure::write('Cache._cake_translations_.duration', '+2 minutes');
     // disable router cache during development
     Configure::write('Cache._cake_routes_.duration', '+2 seconds');
 }
 
 /*
  * Set the default server timezone. Using UTC makes time calculations / conversions easier.
- * Check http://php.net/manual/en/timezones.php for list of valid timezone strings.
+ * Check https://php.net/manual/en/timezones.php for list of valid timezone strings.
  */
 date_default_timezone_set(Configure::read('App.defaultTimezone'));
 
@@ -211,9 +215,6 @@ ServerRequest::addDetector('tablet', function ($request) {
 // \Cake\Database\TypeFactory::build('timestamptimezone')
 //    ->useLocaleParser();
 
-// There is no time-specific type in Cake
-TypeFactory::map('time', StringType::class);
-
 /*
  * Custom Inflector rules, can be set to correctly pluralize or singularize
  * table, model, controller names or whatever other string is passed to the
@@ -223,7 +224,10 @@ TypeFactory::map('time', StringType::class);
 //Inflector::rules('irregular', ['red' => 'redlings']);
 //Inflector::rules('uninflected', ['dontinflectme']);
 
-Configure::write('GLIDE_KEY','wO2aAc4qir3+bbxD+eGHWYvkhNhHzqhayhSlj1bDkw3Zzu2+AJtKAQVWNu7lCq6q0POS3EVsy6feRjGBxdY+RQ==');
+// set a custom date and time format
+// see https://book.cakephp.org/4/en/core-libraries/time.html#setting-the-default-locale-and-format-string
+// and https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax
+//\Cake\I18n\FrozenDate::setToStringFormat('dd.MM.yyyy');
+//\Cake\I18n\FrozenTime::setToStringFormat('dd.MM.yyyy HH:mm');
 
 Configure::write('IS_DEV', true);
-I18n::setLocale('ar_AR');

@@ -16,12 +16,6 @@ use Cake\ORM\TableRegistry;
 class ProgramsController extends AppController
 {
 
-	public function initialize(): void
-	{
-		parent::initialize();
-		$this->loadComponent('RequestHandler');
-	}
-
 	/**
 	 * beforeFilter
 	 *

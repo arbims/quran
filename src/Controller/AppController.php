@@ -44,7 +44,6 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
         /*
@@ -53,11 +52,7 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
         $this->loadComponent('Authentication.Authentication');
-        $this->loadComponent('Crud.Crud', [
-            'actions' => [
-                'Crud.Index'
-            ]
-        ]);
+        
     }
 
 

@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Migrations\AbstractSeed;
-use Cake\Auth\DefaultPasswordHasher;
 
 /**
  * UserSeeder seed.

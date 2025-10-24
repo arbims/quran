@@ -36,7 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
   <?= $this->element('navbar') ?>
   <div class="container">
-    <!-- <img src="<?= $this->GlideImg->generate('img.jpg', 200, 200); ?>" alt=""> -->
+    <!-- <img src="<?php //= $this->GlideImg->generate('img.jpg', 200, 200); ?>" alt=""> -->
     <?= $this->Flash->render() ?>
     <?= $this->fetch('content') ?>
   </div>
