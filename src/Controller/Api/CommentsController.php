@@ -24,6 +24,11 @@ class CommentsController extends AppController
         $this->loadComponent('RequestHandler');
     }
 
+    /**
+     * index
+     *
+     * @return void
+     */
     public function index()
     {
         $comments = $this->Comments->allFor($this->request->getQuery('id'), $this->request->getQuery('type'));
@@ -31,6 +36,11 @@ class CommentsController extends AppController
         $this->viewBuilder()->setOption('serialize', ['comments']);
     }
 
+    /**
+     * add
+     *
+     * @return void
+     */
     public function add()
     {
         $data = $this->request->getData();
@@ -55,7 +65,13 @@ class CommentsController extends AppController
         }
     }
 
-    public function delete($id)
+    /**
+     * delete
+     *
+     * @param int $id
+     * @return void
+     */
+    public function delete(int $id)
     {
         $comment = $this->Comments->get($id);
         $associated_comments = $this->Comments->find()->where(['reply' => $comment->id]);

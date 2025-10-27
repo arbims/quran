@@ -31,6 +31,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
   <meta name="turbolinks-cache-control" content="no-cache"/>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
   <?= $this->Vite->assets('js/main.js', \Cake\Core\Configure::read('IS_DEV')) ?>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
+
 </head>
 
 <body>

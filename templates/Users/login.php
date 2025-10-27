@@ -1,4 +1,3 @@
-<?php debug($_SESSION); ?>
 <?php echo $this->Form->create(null, ['class' => 'custom_form__login']) ?>
   <!-- Email input -->
   <div class="form-outline mb-4">

@@ -61,7 +61,7 @@ class PagesController extends AppController
 				'count' => $query->func()->count('Episodes.id')
 		])
 		->leftJoinWith('Episodes')
-		->group('programs.id');
+		->group('Programs.id');
 		$this->set(compact('posts','programs'));
 	}
 }

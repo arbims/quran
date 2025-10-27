@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <?= $this->Form->label('description', 'المحتوي ', ['class' => 'col-form-label']) ?>
                         <?php echo $this->Ckeditor->input('description') ?>
                     </div>

@@ -20,10 +20,7 @@ class EpisodesController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Programs'],
-        ];
-        $episodes = $this->paginate($this->Episodes);
+        $episodes = $this->paginate($this->Episodes->find()->contain(['Programs']));
 
         $this->set(compact('episodes'));
     }
@@ -60,7 +57,6 @@ class EpisodesController extends AppController
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The episode could not be saved. Please, try again.'));
-            dump(($episode)); die;
         }
         $programs = $this->Episodes->Programs->find('list', ['limit' => 200])->all();
         $this->set(compact('episode', 'programs'));

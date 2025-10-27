@@ -50,7 +50,6 @@ class ProgramsController extends AppController
     {
         $program = $this->Programs->newEmptyEntity();
         if ($this->request->is('post')) {
-            die;
             $program = $this->Programs->patchEntity($program, $this->request->getData());
             if ($this->Programs->save($program)) {
                 $this->Flash->adminsuccess(__('The program has been saved.'));

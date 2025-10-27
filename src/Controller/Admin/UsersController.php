@@ -15,7 +15,7 @@ class UsersController extends AppController {
    * @return void
    */
   public function index(UsersTable $usersTable):void {
-    $users = $usersTable->find()->toArray();
+    $users = $usersTable->find()->all();
     $this->set(compact('users'));
   }
 }
