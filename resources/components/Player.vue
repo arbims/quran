@@ -52,13 +52,13 @@ export default {
       isPlaying: false,
       showVolume: false,
       volume: 1.0,
-      isLoadingAudio: false, // ← évite les conflits
+      isLoadingAudio: false,
     };
   },
   methods: {
     async togglePlay() {
       const audio = document.getElementById('audio-live');
-      if (this.isLoadingAudio) return; // ignore les clics rapides
+      if (this.isLoadingAudio) return;
       this.isLoadingAudio = true;
 
       try {
@@ -105,11 +105,12 @@ h6 {
   color: #fff;
 }
 
+/* 🔊 Slider inversé (haut = fort, bas = faible) */
 .volume-slider {
   width: 100px;
   top: -60px;
   left: -30px;
-  transform: rotate(-90deg);
+  transform: rotate(90deg); /* au lieu de -90deg */
   opacity: 0.9;
   transition: opacity 0.3s ease;
 }
