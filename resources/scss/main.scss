@@ -1,7 +1,7 @@
-@import "./bootstrap.min.scss";
-@import "./icons.scss";
-@import "openplayerjs/dist/openplayer.min.css";
-@import './article.scss';
+@use "./bootstrap.min.scss";
+@use "./icons.scss";
+@use "openplayerjs/dist/openplayer.min.css";
+@use './article.scss';
 
 /* arabic */
 @font-face {

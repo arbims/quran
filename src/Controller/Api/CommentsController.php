@@ -3,9 +3,15 @@
 namespace App\Controller;
 
 use Cake\Event\EventInterface;
+use Cake\View\JsonView;
 
 class CommentsController extends AppController
 {
+
+    public function viewClasses(): array
+    {
+        return [JsonView::class];
+    }
 
     /**
      * beforeFilter
@@ -16,12 +22,6 @@ class CommentsController extends AppController
     public function beforeFilter(EventInterface $event)
     {
         $this->Authentication->allowUnauthenticated(['add', 'index']);
-    }
-
-    public function initialize(): void
-    {
-        parent::initialize();
-        $this->loadComponent('RequestHandler');
     }
 
     /**
