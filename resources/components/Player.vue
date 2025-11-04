@@ -40,7 +40,7 @@
     </div>
 
     <audio id="audio-live" class="d-none">
-      <source src="http://5.135.194.225:8000/live" />
+      <source src="http://102.204.206.14:8000/live" />
     </audio>
   </div>
 </template>
