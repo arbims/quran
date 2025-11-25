@@ -1,14 +1,21 @@
 {
+  "img/bg-radio.jpg": {
+    "file": "bg-radio.cfd2d555.jpg",
+    "src": "img/bg-radio.jpg"
+  },
   "js/main.js": {
-    "file": "main.js.de852ae6.js",
+    "file": "main.js.b3e3c624.js",
     "src": "js/main.js",
     "isEntry": true,
     "css": [
-      "main.babc90c6.css"
+      "main.089a27a6.css"
+    ],
+    "assets": [
+      "bg-radio.cfd2d555.jpg"
     ]
   },
   "js/main.css": {
-    "file": "main.babc90c6.css",
+    "file": "main.089a27a6.css",
     "src": "js/main.css"
   }
 }

@@ -1,121 +1,165 @@
 <template>
-  <div class="radio-card d-flex align-items-center gap-3 p-3 rounded-4 shadow-sm">
-    <img
-      src="/img/bg-radio.jpg"
-      alt="Radio Logo"
-      class="radio-logo rounded-circle border border-2 border-light"
-    />
+  <div class="card">
+    <div class="logo">RQ</div>
 
-    <div class="flex-grow-1">
-      <h6 class="mb-1 text-truncate fw-semibold">
-        إذاعة القرآن الكريم
-      </h6>
-      <span class="badge bg-danger text-uppercase small fw-bold me-1">Live</span>
-      <span class="text-danger fw-bold">●</span>
+    <h1>إذاعة القرآن الكريم تونس</h1>
+    <div class="subtitle">مباشر</div>
+
+    <div class="status">
+      <div :class="['status-dot', { playing: isPlaying }]"></div>
+      <span>{{ statusText }}</span>
     </div>
 
-    <button class="btn btn-light rounded-circle shadow-sm" @click="togglePlay" :disabled="isLoadingAudio">
-      <i v-if="!isPlaying" class="bi bi-play-fill fs-4 text-primary"></i>
-      <i v-else class="bi bi-pause-fill fs-4 text-primary"></i>
-    </button>
-
-    <div class="position-relative">
-      <button
-        class="btn btn-light rounded-circle shadow-sm"
-        @click="toggleVolumeControl"
+    <div class="audio-wrapper">
+      <audio
+        ref="audio"
+        controls
+        preload="none"
+        @play="onPlay"
+        @pause="onPause"
+        @waiting="onWaiting"
+        @error="onError"
       >
-        <i class="bi bi-volume-up-fill fs-5 text-primary"></i>
-      </button>
-
-      <input
-        v-if="showVolume"
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        v-model.number="volume"
-        @input="changeVolume"
-        class="form-range volume-slider position-absolute"
-      />
+        <source src="https://live.radioquran.tn/live" type="audio/mpeg" />
+        متصفحك لا يدعم الصوت HTML5.
+      </audio>
     </div>
 
-    <audio id="audio-live" class="d-none">
-      <source src="http://102.204.206.14:8000/live" />
-    </audio>
+    <div class="hint">{{ hint }}</div>
+
+    <div class="footer">
+      &copy; {{ year }} radioquran.tn
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isPlaying: false,
-      showVolume: false,
-      volume: 1.0,
-      isLoadingAudio: false,
-    };
-  },
-  methods: {
-    async togglePlay() {
-      const audio = document.getElementById('audio-live');
-      if (this.isLoadingAudio) return;
-      this.isLoadingAudio = true;
+<script setup>
+import { ref, onMounted } from "vue";
 
-      try {
-        if (audio.paused) {
-          await audio.play();
-          this.isPlaying = true;
-        } else {
-          audio.pause();
-          this.isPlaying = false;
-        }
-      } catch (err) {
-        console.warn('Erreur lecture audio :', err.message);
-      } finally {
-        this.isLoadingAudio = false;
-      }
-    },
-    toggleVolumeControl() {
-      this.showVolume = !this.showVolume;
-    },
-    changeVolume() {
-      const audio = document.getElementById('audio-live');
-      audio.volume = this.volume;
-    },
-  },
+const audio = ref(null);
+
+const isPlaying = ref(false);
+const statusText = ref("في انتظار القراءة…");
+const hint = ref("انقر على ▶ لبدء البث. يُرجى الانتظار لبضع ثوانٍ إذا لزم الأمر.");
+const year = new Date().getFullYear();
+
+// Handlers
+const onPlay = () => {
+  isPlaying.value = true;
+  statusText.value = "الآن أقرأ…";
+  hint.value = "يتم تشغيل البث حاليًا.";
+};
+
+const onPause = () => {
+  isPlaying.value = false;
+  statusText.value = "البث متوقف";
+  hint.value = "انقر فوق ▶ لبدء البث أو إعادة تشغيله.";
+};
+
+const onWaiting = () => {
+  statusText.value = "جارٍ تحميل الخلاصة…";
+  hint.value = "جاري التحميل… الرجاء الانتظار.";
+};
+
+const onError = () => {
+  isPlaying.value = false;
+  statusText.value = "خطأ في التدفق";
+  hint.value = "البث غير متاح مؤقتًا. يُرجى المحاولة لاحقًا.";
 };
 </script>
 
 <style scoped>
-.radio-card {
-  background-color: #4e7a99;
-  color: #fff;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  background: #020617;
+  border-radius: 18px;
+  padding: 24px 22px;
+  width: 95%;
   max-width: 420px;
-  margin: auto;
+  margin: 40px auto;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  text-align: center;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.radio-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
+.logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  background: radial-gradient(circle at 30% 20%, #bbf7d0, #16a34a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 22px;
+  color: #022c22;
+  border: 2px solid rgba(15, 23, 42, 0.7);
 }
 
-h6 {
-  font-size: 0.95rem;
-  color: #fff;
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.3rem;
 }
 
-/* 🔊 Slider inversé (haut = fort, bas = faible) */
-.volume-slider {
-  width: 100px;
-  top: -60px;
-  left: -30px;
-  transform: rotate(90deg); /* au lieu de -90deg */
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
+.subtitle {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 16px;
 }
 
-.volume-slider:hover {
-  opacity: 1;
+.status {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #f97373;
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.9);
+}
+
+.status-dot.playing {
+  background: #22c55e;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+}
+
+.audio-wrapper {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+audio {
+  width: 100%;
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.footer {
+  margin-top: 16px;
+  font-size: 0.75rem;
+  color: #6b7280;
 }
 </style>
