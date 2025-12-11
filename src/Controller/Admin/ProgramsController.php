@@ -20,7 +20,7 @@ class ProgramsController extends AppController
      */
     public function index()
     {
-        $programs = $this->paginate($this->Programs);
+        $programs = $this->paginate($this->Programs->find());
 
         $this->set(compact('programs'));
     }

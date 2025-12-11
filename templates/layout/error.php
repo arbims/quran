@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -13,29 +14,45 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  * @var \App\View\AppView $this
  */
+
+$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
-<html>
+<html dir="rtl" lang="ar">
+
 <head>
     <?= $this->Html->charset() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        <?= $this->fetch('title') ?>
+        <?= (isset($title)) ? $title . 'Quran' : 'Quran' ?>
     </title>
     <?= $this->Html->meta('icon') ?>
-
+    <?= $this->Html->meta('csrfToken', $this->request->getAttribute('csrfToken')); ?>
+    <meta name="turbolinks-cache-control" content="no-cache"/>
+    <?php
+    $this->loadHelper('VitePlugin.Vite');
+    ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <?= $this->Vite->assets('js/main.js', false) ?>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
 </head>
+
 <body>
-    <div class="error-container">
+<?= $this->element('navbar') ?>
+<div class="container">
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
-        <?= $this->Html->link(__('Back'), 'javascript:history.back()') ?>
-    </div>
+
+    <?= $this->element('footer') ?>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <?= $this->Html->script('app.js') ?>
 </body>
+</body>
+
 </html>

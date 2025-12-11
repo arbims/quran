@@ -11,13 +11,13 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th><?= $this->Paginator->sort('id') ?></th>
-            <th><?= $this->Paginator->sort('title') ?></th>
-            <th><?= $this->Paginator->sort('slug') ?></th>
-            <th><?= $this->Paginator->sort('image') ?></th>
-            <th><?= $this->Paginator->sort('created') ?></th>
-            <th><?= $this->Paginator->sort('modified') ?></th>
-            <th class="actions"><?= __('Actions') ?></th>
+            <th><?= $this->Paginator->sort('id', 'ID') ?></th>
+            <th><?= $this->Paginator->sort('title', 'العنوان') ?></th>
+            <th><?= $this->Paginator->sort('slug', 'Slug') ?></th>
+            <th><?= $this->Paginator->sort('image', 'الصورة') ?></th>
+            <th><?= $this->Paginator->sort('created', 'تاريخ الإنشاء') ?></th>
+            <th><?= $this->Paginator->sort('modified', 'آخر تعديل') ?></th>
+            <th class="actions"><?= __('التحكم') ?></th>
         </tr>
     </thead>
     <tbody>
@@ -31,7 +31,7 @@
                 <td><?= h($program->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('تحديث'), ['action' => 'edit', $program->id], ['class' => 'btn btn-success']) ?>
-                    <?= $this->Form->postLink(__('حذف'), ['action' => 'delete', $program->id], ['confirm' => __('Are you sure you want to delete # {0}?', $program->id), 'class' => 'btn btn-danger' ]) ?>
+                    <?= $this->Form->postLink(__('حذف'), ['action' => 'delete', $program->id], ['confirm' => 'هل تريد فعلا حذف هذا المقال ', 'class' => 'btn btn-danger' ]) ?>
                 </td>
             </tr>
         <?php endforeach; ?>

@@ -55,6 +55,7 @@ class ErrorController extends AppController
     {
         parent::beforeRender($event);
 
+        $this->viewBuilder()->setHelpers(['VitePlugin.Vite']);
         $this->viewBuilder()->setTemplatePath('Error');
     }
 

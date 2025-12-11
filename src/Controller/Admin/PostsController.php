@@ -14,7 +14,7 @@ class PostsController extends AppController {
 	 * @return void
 	 */
 	public function index() {
-		$posts = $this->Posts->find('all')->where(['online' => 1]);
+		$posts = $this->paginate($this->Posts->find('all')->where(['online' => 1]));
 		$this->set(compact('posts'));
 	}
 

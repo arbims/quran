@@ -230,4 +230,4 @@ ServerRequest::addDetector('tablet', function ($request) {
 //\Cake\I18n\FrozenDate::setToStringFormat('dd.MM.yyyy');
 //\Cake\I18n\FrozenTime::setToStringFormat('dd.MM.yyyy HH:mm');
 
-Configure::write('IS_DEV', true);
+Configure::write('IS_DEV', false);
