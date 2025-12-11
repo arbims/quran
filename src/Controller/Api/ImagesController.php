@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
+use App\Controller\AppController;
 use Cake\Core\Configure;
 use Cake\Http\Response;
 use League\Glide\Server;

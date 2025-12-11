@@ -39,7 +39,7 @@ class ProgramsController extends AppController
 	 * @param  mixed $id
 	 * @return void
 	 */
-	public function show(string $slug, int $id): void
+	public function show(int $id, string $slug): void
 	{
 		$programTable = TableRegistry::getTableLocator()->get('Programs');
 		$program = $programTable->get($id);

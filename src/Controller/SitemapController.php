@@ -59,9 +59,9 @@ class SitemapController extends AppController
 			'changefreq' => 'daily',
 			'priority' => '0.5'
 		];
-		foreach ($posts as $post) {
+        foreach ($posts as $post) {
 			$urls[] = [
-				'loc' => Router::url(['controller' => 'Posts', 'action' => 'detail', $post->slug, $post->id, '_full' => true]),
+				'loc' => Router::url(['controller' => 'Posts', 'action' => 'detail', $post->id, rawurlencode($post->slug), '_full' => true, '_escape' => true]),
 				'lastmod' => $post->modified->format('Y-m-d'),
 				'changefreq' => 'daily',
 				'priority' => '0.5'
@@ -70,7 +70,7 @@ class SitemapController extends AppController
 		$programs = $programsTable->find()->all();
 		foreach ($programs as $program) {
 			$urls[] = [
-				'loc' => Router::url(['controller' => 'Programs', 'action' => 'show', $program->slug, $program->id, '_full' => true]),
+				'loc' => Router::url(['controller' => 'Programs', 'action' => 'show', $program->id, rawurlencode($program->slug), '_full' => true, '_escape' => true]),
 				'lastmod' => $program->modified->format('Y-m-d'),
 				'changefreq' => 'daily',
 				'priority' => '0.5'

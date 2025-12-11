@@ -92,7 +92,7 @@ class CommentsTable extends Table
     }
 
     public function allFor($post_id, $post_type) {
-        $records = $this->find()->where(['commentable_id' => $post_id , 'commentable_type' => $post_type])->order('created')->toArray();
+        $records = $this->find()->where(['commentable_id' => $post_id , 'commentable_type' => $post_type])->orderBy('created')->toArray();
         $comments = [];
         $by_id = [];
         foreach ($records as $record) {
