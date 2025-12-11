@@ -12,7 +12,7 @@
         <?php foreach ($posts as $post) : ?>
           <div class="col-md-4">
             <div class="card custom__radio__card">
-              <?= $this->Html->image('posts/' . $post->image, ['alt' => $post->image, 'class' => 'card-img-top']) ?>
+              <?= $this->Html->image($post->image, ['alt' => $post->image, 'class' => 'card-img-top']) ?>
               <div class="card-body">
                 <h5 class="card-title"><?= $post->name; ?></h5>
                 <p class="card-text"><?= strip_tags($this->Text->truncate($post->description, 200)) ?></p>
@@ -26,15 +26,12 @@
     </div>
   </div>
 
-
-  <?php if (count($posts) > 10) : ?>
-    <nav aria-label="Page navigation" class="d-flex justify-content-center">
-      <ul class="pagination">
-        <?= $this->Paginator->prev(); ?>
-        <?= $this->Paginator->numbers(['modulus' => 2]); ?>
-        <?= $this->Paginator->next(); ?>
-      </ul>
-    </nav>
-  <?php endif; ?>
+<nav aria-label="Page navigation" class="d-flex justify-content-center">
+  <ul class="pagination">
+    <?= $this->Paginator->prev(); ?>
+    <?= $this->Paginator->numbers(['modulus' => 2]); ?>
+    <?= $this->Paginator->next(); ?>
+  </ul>
+</nav>
 
 </div>

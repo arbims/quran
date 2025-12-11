@@ -97,12 +97,8 @@ class EpisodesController extends AppController
     public function delete(int $id)
     {
         $episode = $this->Episodes->get($id);
-        if ($this->Episodes->delete($episode)) {
-            $this->Flash->adminsuccess(__('The episode has been deleted.'));
-        } else {
-            $this->Flash->error(__('The episode could not be deleted. Please, try again.'));
-        }
-
+        $this->Episodes->delete($episode);
+        $this->Flash->adminsuccess(__('تم المحو بنجاح '));
         return $this->redirect(['action' => 'index']);
     }
 }

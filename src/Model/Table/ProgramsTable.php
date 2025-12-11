@@ -53,7 +53,7 @@ class ProgramsTable extends Table
 
         $this->addBehavior('Upload.Upload', array(
             'fields' => array('image' => 'img/programs/'),
-            'model' => 'Posts',
+            'model' => 'Programs',
             'width' => 250,
             'height' => 180
             )

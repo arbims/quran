@@ -21,14 +21,24 @@ class ContactForm extends Form
 
     public function validationDefault(Validator $validator): Validator
     {
-      return $validator->add('name', 'length', [
-        'rule' => ['minLength', 4],
-        'message' => 'Un nom est requis'
-      ])->add('email', 'format', [
-        'rule' => 'email',
-        'message' => 'Une adresse email valide est requise',
-      ]);
+        // name
+        $validator
+            ->notEmptyString('name', 'الإسم إجباري ')
+            ->minLength('name', 3, 'يجب أن يحتوي الإسم على ثلاث حروف على الأقل ');
+
+        // email
+        $validator
+            ->notEmptyString('email', 'البريد الإلكتروني إجباري ')
+            ->maxLength('email', 254)
+            ->email('email', false, 'يجيب إدخال بريد إلكتروني صحيح ');
+
+        // content
+        $validator
+            ->notEmptyString('content', 'المحتوى إجباري');
+
+        return $validator;
     }
+
 
     /**
      * Defines what to execute once the Form is processed

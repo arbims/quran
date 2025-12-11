@@ -12,7 +12,7 @@
       <h1 class="article__wrapper__title"><?= $program->title ?></h1>
       <div>
       <div class="article__wrapper__img">
-        <?= $this->Html->image('programs/'. $program->image )?>
+        <?= $this->Html->image($program->image )?>
       </div>
       </div>
       <div id="episode" data-id="<?= $program->id ?>"></div>

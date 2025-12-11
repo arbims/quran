@@ -39,5 +39,6 @@ class AppView extends View
     {
         $this->loadHelper('Authentication.Identity');
         $this->loadHelper('VitePlugin.Vite');
+        $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
     }
 }

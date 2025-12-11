@@ -93,11 +93,11 @@ return static function (RouteBuilder $routes) {
 
 
         $builder->connect('/blog',['controller' => 'Posts', 'action' => 'index']);
-        $builder->connect('/blog/{slug}-{id}',['controller' => 'Posts', 'action' => 'detail'])
-        ->setPass(['slug','id'])
+        $builder->connect('/blog/{id}/{slug}',['controller' => 'Posts', 'action' => 'detail'])
+        ->setPass(['id','slug'])
         ->setPatterns([
-                'slug' => '[a-z0-9\_\-]+',
-                'id' => '[0-9]+',
+            'id' => '[0-9]+',
+            'slug' => '[^\s/]+',
         ]);
 
         /*
@@ -108,11 +108,11 @@ return static function (RouteBuilder $routes) {
         $builder->get('/sitemap', ['controller' => 'Sitemap', 'action' => 'index'])->setExtensions(['xml']);
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'index']);
         $builder->connect('/programs', ['controller' => 'Programs']);
-        $builder->connect('/program/{slug}-{id}', ['controller' => 'Programs', 'action' => 'show'])
-        ->setPass(['slug','id'])
+        $builder->connect('/program/{id}/{slug}', ['controller' => 'Programs', 'action' => 'show'])
+        ->setPass(['id','slug'])
         ->setPatterns([
-                'slug' => '[a-z0-9\_\-]+',
-                'id' => '[0-9]+',
+            'id' => '[0-9]+',
+            'slug' => '[^\s/]+',
         ]);
 
         $builder->get('/contact', ['controller' => 'Contact', 'action' => 'index']);

@@ -22,7 +22,7 @@
         <?php foreach($posts as $post): ?>
         <div class="col-md-6">
           <div class="card custom__radio__card">
-            <?=$this->Html->image('posts/' . $post->image, ['alt' => $post->image, 'class' => 'card-img-top'])?>
+            <?=$this->Html->image($post->image, ['alt' => $post->image, 'class' => 'card-img-top'])?>
             <div class="card-body">
               <h5 class="card-title"><?= $post->name; ?></h5>
               <p class="card-text"><?= strip_tags($this->Text->truncate($post->description, 200)) ?></p>

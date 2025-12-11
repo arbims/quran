@@ -52,11 +52,12 @@ class ProgramsController extends AppController
         if ($this->request->is('post')) {
             $program = $this->Programs->patchEntity($program, $this->request->getData());
             if ($this->Programs->save($program)) {
-                $this->Flash->adminsuccess(__('The program has been saved.'));
-
+                $this->Flash->adminsuccess(__('تحديث بنجاح '));
                 return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->adminerror(__('لا يمكن القيام بالتحديث '));
+                $this->set('errors', $program->getErrors());
             }
-            $this->Flash->error(__('The program could not be saved. Please, try again.'));
         }
         $this->set(compact('program'));
     }
@@ -76,11 +77,12 @@ class ProgramsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $program = $this->Programs->patchEntity($program, $this->request->getData());
             if ($this->Programs->save($program)) {
-                $this->Flash->adminsuccess(__('The program has been saved.'));
-
+                $this->Flash->adminsuccess(__('تحديث بنجاح '));
                 return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->adminerror(__('لا يمكن القيام بالتحديث '));
+                $this->set('errors', $program->getErrors());
             }
-            $this->Flash->error(__('The program could not be saved. Please, try again.'));
         }
         $this->set(compact('program'));
     }
@@ -96,12 +98,8 @@ class ProgramsController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $program = $this->Programs->get($id);
-        if ($this->Programs->delete($program)) {
-            $this->Flash->adminsuccess(__('The program has been deleted.'));
-        } else {
-            $this->Flash->error(__('The program could not be deleted. Please, try again.'));
-        }
-
+        $this->Programs->delete($program);
+        $this->Flash->adminsuccess(__('تم المحو بنجاح '));
         return $this->redirect(['action' => 'index']);
     }
 }

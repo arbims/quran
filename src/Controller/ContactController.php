@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Form\ContactForm;
 use Cake\Event\EventInterface;
+use Cake\View\JsonView;
 
 /**
  * Contact Controller
@@ -13,7 +14,12 @@ use Cake\Event\EventInterface;
  */
 class ContactController extends AppController
 {
-	/**
+    public function viewClasses(): array
+    {
+        return [JsonView::class];
+    }
+
+    /**
 	 * beforeFilter
 	 *
 	 * @param  mixed $event

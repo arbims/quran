@@ -57,7 +57,7 @@ class UploadBehavior extends Behavior {
 					}
 				}
 				chmod($path . $namefile, 0777);
-				$data->$field = $namefile;
+				$data->$field = strtolower($this->nameModel)  . '/' . $namefile;
 			}
 		}
 

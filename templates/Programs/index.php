@@ -14,7 +14,7 @@
             <div class="card custom__radio__card">
               <div class="header__program">
               <h5 class="card-title"><?= $program->title; ?></h5>
-              <?= $this->Html->image('programs/' . $program->image, ['alt' => $program->image, 'class' => 'card-img-top']) ?>
+              <?= $this->Html->image($program->image, ['alt' => $program->image, 'class' => 'card-img-top']) ?>
               </div>
               <div class="card-body">
                 <p class="card-text"><?= strip_tags($this->Text->truncate($program->description, 200)) ?></p>
