@@ -35,7 +35,9 @@ class PostsTable extends AbstractMigration
 			'default' => null,
 			'null' => false,
 		]);
-		$table->addColumn('online', 'integer');
+		$table->addColumn('online', 'integer', [
+            'default' => null
+        ]);
 		$table->addColumn('user_id', 'integer')->addIndex('user_id');
 		$table->addColumn('created', 'datetime', [
 			'default' => null,

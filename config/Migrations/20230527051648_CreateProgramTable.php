@@ -40,7 +40,9 @@ class CreateProgramTable extends AbstractMigration
             'null' => true
         ]);
         $table->addColumn('description','text');
-        $table->addColumn('online','integer');
+        $table->addColumn('online','integer', [
+                'default' => null,
+        ]);
         $table->addColumn('program_id','integer')->addForeignKey('program_id', 'programs', ['id']);
         $table->addColumn('created', 'datetime', [
 			'default' => null,

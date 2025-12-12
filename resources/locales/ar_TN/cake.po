@@ -1,0 +1,555 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2024-02-13 12:05+0100\n"
+"PO-Revision-Date: 2025-12-12 09:47+0100\n"
+"Last-Translator: Your Name <your@email.com>\n"
+"Language-Team: EMAIL@ADDRESS\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Gemini AI\n"
+
+#: templates/Error/error400.php:41 templates/Error/error500.php:46
+msgid "Error"
+msgstr "خطأ"
+
+#: templates/Error/error400.php:42
+msgid "The requested address {0} was not found on this server."
+msgstr "لم يتم العثور على العنوان المطلوب {0} على هذا الخادم."
+
+#: templates/Error/error500.php:44
+#: vendor/cakephp/cakephp/src/Error/Renderer/WebExceptionRenderer.php:359
+msgid "An Internal Error Has Occurred."
+msgstr "حدث خطأ داخلي."
+
+#: vendor/cakephp/cakephp/src/Error/Renderer/WebExceptionRenderer.php:357
+msgid "Not Found"
+msgstr "غير موجود"
+
+#: vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:354
+msgid "Missing or incorrect CSRF cookie type."
+msgstr "نوع ملف تعريف الارتباط CSRF مفقود أو غير صحيح."
+
+#: vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:358
+msgid "Missing or invalid CSRF cookie."
+msgstr "ملف تعريف الارتباط CSRF مفقود أو غير صالح."
+
+#: vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:381
+#: vendor/cakephp/cakephp/src/Http/Middleware/SessionCsrfProtectionMiddleware.php:267
+msgid ""
+"CSRF token from either the request body or request headers did not match or "
+"is missing."
+msgstr "رمز CSRF المميز إما من نص الطلب أو رؤوس الطلب غير متطابق أو مفقود."
+
+#: vendor/cakephp/cakephp/src/Http/Middleware/SessionCsrfProtectionMiddleware.php:249
+msgid "Missing or incorrect CSRF session key"
+msgstr "مفتاح جلسة CSRF مفقود أو غير صحيح"
+
+#: vendor/cakephp/cakephp/src/Http/Response.php:1429
+msgid "The requested file contains `..` and will not be read."
+msgstr "يحتوي الملف المطلوب على `..` ولن تتم قراءته."
+
+#: vendor/cakephp/cakephp/src/Http/Response.php:1437
+msgid "The requested file was not found"
+msgstr "لم يتم العثور على الملف المطلوب"
+
+#: vendor/cakephp/cakephp/src/I18n/Number.php:105
+msgid "{0,number,#,###.##} KB"
+msgstr "{0,number,#,###.##} كيلوبايت"
+
+#: vendor/cakephp/cakephp/src/I18n/Number.php:106
+msgid "{0,number,#,###.##} MB"
+msgstr "{0,number,#,###.##} ميغابايت"
+
+#: vendor/cakephp/cakephp/src/I18n/Number.php:108
+msgid "{0,number,#,###.##} GB"
+msgstr "{0,number,#,###.##} غيغابايت"
+
+#: vendor/cakephp/cakephp/src/I18n/Number.php:109
+msgid "{0,number,#,###.##} TB"
+msgstr "{0,number,#,###.##} تيرابايت"
+
+#: vendor/cakephp/cakephp/src/I18n/Number.php:104
+msgid "{0,number,integer} Byte"
+msgid_plural "{0,number,integer} Bytes"
+msgstr[0] "{0,number,integer} بايت"
+msgstr[1] "{0,number,integer} بايت"
+msgstr[2] "{0,number,integer} بايت"
+msgstr[3] "{0,number,integer} بايت"
+msgstr[4] "{0,number,integer} بايت"
+msgstr[5] "{0,number,integer} بايت"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:95
+msgid "{0} from now"
+msgstr "بعد {0}"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:95
+msgid "{0} ago"
+msgstr "منذ {0}"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:98
+msgid "{0} after"
+msgstr "{0} بعد"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:98
+msgid "{0} before"
+msgstr "{0} قبل"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:131
+msgid "just now"
+msgstr "للتو"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:168
+msgid "about a second ago"
+msgstr "منذ حوالي ثانية"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:169
+msgid "about a minute ago"
+msgstr "منذ حوالي دقيقة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:170
+msgid "about an hour ago"
+msgstr "منذ حوالي ساعة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:171
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:383
+msgid "about a day ago"
+msgstr "منذ حوالي يوم"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:172
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:384
+msgid "about a week ago"
+msgstr "منذ حوالي أسبوع"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:173
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:385
+msgid "about a month ago"
+msgstr "منذ حوالي شهر"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:174
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:386
+msgid "about a year ago"
+msgstr "منذ حوالي سنة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:185
+msgid "in about a second"
+msgstr "في حوالي ثانية"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:186
+msgid "in about a minute"
+msgstr "في حوالي دقيقة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:187
+msgid "in about an hour"
+msgstr "في حوالي ساعة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:188
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:397
+msgid "in about a day"
+msgstr "في حوالي يوم"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:189
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:398
+msgid "in about a week"
+msgstr "في حوالي أسبوع"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:190
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:399
+msgid "in about a month"
+msgstr "في حوالي شهر"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:191
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:400
+msgid "in about a year"
+msgstr "في حوالي سنة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:355
+msgid "today"
+msgstr "اليوم"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:422
+msgid "%s ago"
+msgstr "منذ %s"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:423
+msgid "on %s"
+msgstr "في %s"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:62
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:143
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:367
+msgid "{0} year"
+msgid_plural "{0} years"
+msgstr[0] "{0} سنة"
+msgstr[1] "{0} سنتان"
+msgstr[2] "{0} سنوات"
+msgstr[3] "{0} سنوات"
+msgstr[4] "{0} سنة"
+msgstr[5] "{0} سنة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:66
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:146
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:370
+msgid "{0} month"
+msgid_plural "{0} months"
+msgstr[0] "{0} شهر"
+msgstr[1] "{0} شهران"
+msgstr[2] "{0} أشهر"
+msgstr[3] "{0} أشهر"
+msgstr[4] "{0} شهرًا"
+msgstr[5] "{0} شهر"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:72
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:149
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:373
+msgid "{0} week"
+msgid_plural "{0} weeks"
+msgstr[0] "{0} أسبوع"
+msgstr[1] "{0} أسبوعان"
+msgstr[2] "{0} أسابيع"
+msgstr[3] "{0} أسابيع"
+msgstr[4] "{0} أسبوعًا"
+msgstr[5] "{0} أسبوع"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:74
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:152
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:376
+msgid "{0} day"
+msgid_plural "{0} days"
+msgstr[0] "{0} يوم"
+msgstr[1] "{0} يومان"
+msgstr[2] "{0} أيام"
+msgstr[3] "{0} أيام"
+msgstr[4] "{0} يومًا"
+msgstr[5] "{0} يوم"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:79
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:155
+msgid "{0} hour"
+msgid_plural "{0} hours"
+msgstr[0] "{0} ساعة"
+msgstr[1] "{0} ساعتان"
+msgstr[2] "{0} ساعات"
+msgstr[3] "{0} ساعات"
+msgstr[4] "{0} ساعة"
+msgstr[5] "{0} ساعة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:83
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:158
+msgid "{0} minute"
+msgid_plural "{0} minutes"
+msgstr[0] "{0} دقيقة"
+msgstr[1] "{0} دقيقتان"
+msgstr[2] "{0} دقائق"
+msgstr[3] "{0} دقائق"
+msgstr[4] "{0} دقيقة"
+msgstr[5] "{0} دقيقة"
+
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:87
+#: vendor/cakephp/cakephp/src/I18n/RelativeTimeFormatter.php:161
+msgid "{0} second"
+msgid_plural "{0} seconds"
+msgstr[0] "{0} ثانية"
+msgstr[1] "{0} ثانيتان"
+msgstr[2] "{0} ثواني"
+msgstr[3] "{0} ثواني"
+msgstr[4] "{0} ثانية"
+msgstr[5] "{0} ثانية"
+
+#: vendor/cakephp/cakephp/src/ORM/RulesChecker.php:64
+msgid "This value is already in use"
+msgstr "هذه القيمة قيد الاستخدام بالفعل"
+
+#: vendor/cakephp/cakephp/src/ORM/RulesChecker.php:114
+msgid "This value does not exist"
+msgstr "هذه القيمة غير موجودة"
+
+#: vendor/cakephp/cakephp/src/ORM/RulesChecker.php:234
+msgid "Cannot modify row: a constraint for the `{0}` association fails."
+msgstr "تعذر تعديل الصف: فشل قيد للاقتران `{0}`."
+
+#: vendor/cakephp/cakephp/src/ORM/RulesChecker.php:272
+msgid "The count does not match {0}{1}"
+msgstr "العدد غير مطابق لـ {0}{1}"
+
+#: vendor/cakephp/cakephp/src/Utility/Text.php:900
+msgid "and"
+msgstr "و"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1079
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:3036
+#: vendor/cakephp/cakephp/src/View/Form/ArrayContext.php:232
+msgid "This field cannot be left empty"
+msgstr "لا يمكن ترك هذا الحقل فارغاً"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1106
+msgid "The provided value must be alphanumeric"
+msgstr "يجب أن تكون القيمة المقدمة أبجدية رقمية"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1133
+msgid "The provided value must not be alphanumeric"
+msgstr "يجب ألا تكون القيمة المقدمة أبجدية رقمية"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1160
+msgid "The provided value must be ASCII-alphanumeric"
+msgstr "يجب أن تكون القيمة المقدمة أبجدية رقمية بتنسيق ASCII"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1187
+msgid "The provided value must not be ASCII-alphanumeric"
+msgstr "يجب ألا تكون القيمة المقدمة أبجدية رقمية بتنسيق ASCII"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1230
+msgid ""
+"The length of the provided value must be between `{0}` and `{1}`, inclusively"
+msgstr "يجب أن يتراوح طول القيمة المقدمة بين `{0}` و `{1}`، بشكل شامل."
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1282
+msgid "The provided value must be a valid credit card number of any type"
+msgstr "يجب أن تكون القيمة المقدمة رقم بطاقة ائتمان صالح من أي نوع"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1287
+msgid ""
+"The provided value must be a valid credit card number of these types: `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة رقم بطاقة ائتمان صالح من هذه الأنواع: `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1324
+msgid "The provided value must be greater than `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أكبر من `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1356
+msgid "The provided value must be greater than or equal to `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أكبر من أو تساوي `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1388
+msgid "The provided value must be less than `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أقل من `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1420
+msgid "The provided value must be less than or equal to `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أقل من أو تساوي `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1452
+msgid "The provided value must be equal to `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة مساوية لـ `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1484
+msgid "The provided value must not be equal to `{0}`"
+msgstr "يجب ألا تكون القيمة المقدمة مساوية لـ `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1518
+msgid "The provided value must be same as `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة مطابقة لـ `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1551
+msgid "The provided value must not be same as `{0}`"
+msgstr "يجب ألا تكون القيمة المقدمة مطابقة لـ `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1584
+msgid "The provided value must be equal to the one of field `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة مساوية لقيمة الحقل `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1621
+msgid "The provided value must not be equal to the one of field `{0}`"
+msgstr "يجب ألا تكون القيمة المقدمة مساوية لقيمة الحقل `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1658
+msgid "The provided value must be greater than the one of field `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أكبر من قيمة الحقل `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1698
+msgid ""
+"The provided value must be greater than or equal to the one of field `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أكبر من أو تساوي قيمة الحقل `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1735
+msgid "The provided value must be less than the one of field `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أقل من قيمة الحقل `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1775
+msgid "The provided value must be less than or equal to the one of field `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة أقل من أو تساوي قيمة الحقل `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1816
+msgid "The provided value must be a date of one of these formats: `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة تاريخاً بأحد هذه التنسيقات: `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1857
+msgid ""
+"The provided value must be a date and time of one of these formats: `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة تاريخاً ووقتاً بأحد هذه التنسيقات: `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1888
+msgid "The provided value must be a time"
+msgstr "يجب أن تكون القيمة المقدمة وقتاً"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1920
+msgid "The provided value must be a localized time, date or date and time"
+msgstr "يجب أن تكون القيمة المقدمة وقتاً أو تاريخاً أو تاريخاً ووقتاً محلياً"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1947
+msgid "The provided value must be a boolean"
+msgstr "يجب أن تكون القيمة المقدمة قيمة منطقية (Boolean)"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1984
+msgid ""
+"The provided value must be decimal with any number of decimal places, "
+"including none"
+msgstr "يجب أن تكون القيمة المقدمة عشرياً بأي عدد من المنازل العشرية، بما في ذلك لا شيء"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:1989
+msgid "The provided value must be decimal with `{0}` decimal places"
+msgstr "يجب أن تكون القيمة المقدمة عشرياً بـ `{0}` منزلاً عشرياً"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2026
+msgid "The provided value must be an e-mail address"
+msgstr "يجب أن تكون القيمة المقدمة عنوان بريد إلكتروني"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2067
+msgid "The provided value must be one of `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة واحدة من `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2096
+msgid "The provided value must be an IP address"
+msgstr "يجب أن تكون القيمة المقدمة عنوان IP"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2123
+msgid "The provided value must be an IPv4 address"
+msgstr "يجب أن تكون القيمة المقدمة عنوان IPv4"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2150
+msgid "The provided value must be an IPv6 address"
+msgstr "يجب أن تكون القيمة المقدمة عنوان IPv6"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2178
+msgid "The provided value must be at least `{0}` characters long"
+msgstr "يجب أن يكون طول القيمة المقدمة `{0}` حرفاً على الأقل"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2206
+msgid "The provided value must be at least `{0}` bytes long"
+msgstr "يجب أن يكون طول القيمة المقدمة `{0}` بايت على الأقل"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2234
+msgid "The provided value must be at most `{0}` characters long"
+msgstr "يجب أن يكون طول القيمة المقدمة `{0}` حرفاً على الأكثر"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2262
+msgid "The provided value must be at most `{0}` bytes long"
+msgstr "يجب أن يكون طول القيمة المقدمة `{0}` بايت على الأكثر"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2289
+msgid "The provided value must be numeric"
+msgstr "يجب أن تكون القيمة المقدمة رقمية"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2316
+msgid "The provided value must be a natural number"
+msgstr "يجب أن تكون القيمة المقدمة رقماً طبيعياً"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2343
+msgid "The provided value must be a non-negative integer"
+msgstr "يجب أن تكون القيمة المقدمة عدداً صحيحاً غير سالب"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2382
+msgid "The provided value must be between `{0}` and `{1}`, inclusively"
+msgstr "يجب أن تكون القيمة المقدمة بين `{0}` و `{1}`، بشكل شامل"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2416
+msgid "The provided value must be a URL"
+msgstr "يجب أن تكون القيمة المقدمة رابط URL"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2445
+msgid "The provided value must be a URL with protocol"
+msgstr "يجب أن تكون القيمة المقدمة رابط URL مع البروتوكول"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2475
+msgid "The provided value must be one of: `{0}`"
+msgstr "يجب أن تكون القيمة المقدمة واحدة من: `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2506
+msgid "The provided value must be a UUID"
+msgstr "يجب أن تكون القيمة المقدمة UUID"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2538
+msgid "The provided value must be an uploaded file"
+msgstr "يجب أن تكون القيمة المقدمة ملفاً تم تحميله"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2567
+msgid "The provided value must be a latitude/longitude coordinate"
+msgstr "يجب أن تكون القيمة المقدمة إحداثيات خط العرض/خط الطول"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2594
+msgid "The provided value must be a latitude"
+msgstr "يجب أن تكون القيمة المقدمة خط عرض"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2621
+msgid "The provided value must be a longitude"
+msgstr "يجب أن تكون القيمة المقدمة خط طول"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2648
+msgid "The provided value must be ASCII bytes only"
+msgstr "يجب أن تكون القيمة المقدمة بايتات ASCII فقط"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2675
+msgid "The provided value must be UTF-8 bytes only"
+msgstr "يجب أن تكون القيمة المقدمة بايتات UTF-8 فقط"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2704
+msgid "The provided value must be 3 and 4 byte UTF-8 sequences only"
+msgstr "يجب أن تكون القيمة المقدمة تسلسلات UTF-8 بحجم 3 و 4 بايت فقط"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2731
+msgid "The provided value must be an integer"
+msgstr "يجب أن تكون القيمة المقدمة عدداً صحيحاً"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2758
+msgid "The provided value must be an array"
+msgstr "يجب أن تكون القيمة المقدمة مصفوفة"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2784
+msgid "The provided value must be scalar"
+msgstr "يجب أن تكون القيمة المقدمة قياسية (Scalar)"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2810
+msgid "The provided value must be a hex color"
+msgstr "يجب أن تكون القيمة المقدمة لون سداسي عشري (Hex Color)"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2842
+msgid "The provided value must be a set of multiple options"
+msgstr "يجب أن تكون القيمة المقدمة مجموعة من الخيارات المتعددة"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2873
+msgid "The provided value must have at least `{0}` elements"
+msgstr "يجب أن تحتوي القيمة المقدمة على `{0}` عناصر على الأقل"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2908
+msgid "The provided value must have at most `{0}` elements"
+msgstr "يجب أن تحتوي القيمة المقدمة على `{0}` عناصر على الأكثر"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:2975
+msgid "The provided value must match against the pattern `{0}`"
+msgstr "يجب أن تتطابق القيمة المقدمة مع النمط `{0}`"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:3005
+msgid "This field is required"
+msgstr "هذا الحقل مطلوب"
+
+#: vendor/cakephp/cakephp/src/Validation/Validator.php:3163
+msgid "The provided value is invalid"
+msgstr "القيمة المقدمة غير صالحة"
+
+#: vendor/cakephp/cakephp/src/View/Helper/FormHelper.php:997
+msgid "Edit {0}"
+msgstr "تعديل {0}"
+
+#: vendor/cakephp/cakephp/src/View/Helper/FormHelper.php:999
+msgid "New {0}"
+msgstr "جديد {0}"
+
+#: vendor/cakephp/cakephp/src/View/Helper/FormHelper.php:1964
+msgid "Submit"
+msgstr "إرسال"

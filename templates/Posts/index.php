@@ -16,7 +16,9 @@
               <div class="card-body">
                 <h5 class="card-title"><?= $post->name; ?></h5>
                 <p class="card-text"><?= strip_tags($this->Text->truncate($post->description, 200)) ?></p>
-                <div class="article-date">crée le : <?= $post->created->i18nFormat('dd MMMM, yyyy') ?> par : <?= $post->user->username ?></div>
+                  <div class="article-date">
+                       <span>تم الإنشاء في : <?= $post->created->i18nFormat('dd MMMM, yyyy') ?> بواسطة : <?= $post->user->email ?></span>
+                  </div>
                 <a href="<?= $this->Url->build(['controller' => 'Posts', 'action' => 'detail', 'slug' => $post->slug, 'id' => $post->id]) ?>" class="btn btn-primary custom__radio__btn">مشاهدة المزيد </a>
               </div>
             </div>

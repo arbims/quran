@@ -12,6 +12,9 @@
               <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/programs">البرامج</a></li>
               <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="#">من نحن </a></li>
               <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/contact">إتصل بنا </a></li>
+              <?php if($this->Identity->isLoggedIn()): ?>
+              <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="/admin/posts"> Admin </a></li>
+              <?php endif; ?>
           </ul>
       </div>
   </div>

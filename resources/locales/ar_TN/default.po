@@ -1,0 +1,5 @@
+msgid "This field cannot be left empty"
+msgstr "جيقابايت"
+
+msgid "The provided value must be at least `{0}` characters long"
+msgstr "يجب أن يكون طول القيمة على الأقل {0} حروف"

@@ -44,8 +44,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <body>
 <?= $this->element('navbar') ?>
 <div class="container">
-        <?= $this->Flash->render() ?>
+        <div style="text-align: center; margin-top: 100px;">
+            <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
+        </div>
 
     <?= $this->element('footer') ?>
     <!-- Bootstrap core JS-->

@@ -10,7 +10,7 @@
   <div class="row">
     <div class="article__wrapper">
       <h1 class="article__wrapper__title"><?= $post->name ?></h1>
-      <span class="article__wrapper__createdby">crée le : <?= $post->created->i18nFormat('dd MMMM, yyyy') ?> par : <?= $post->user->username ?></span>
+      <span class="article__wrapper__createdby">تم الإنشاء في : <?= $post->created->i18nFormat('dd MMMM, yyyy') ?> بواسطة : <?= $post->user->email ?></span>
       <div class="article__wrapper__img">
         <?= $this->Html->image($post->image, ['class' => 'article__img']) ?>
 

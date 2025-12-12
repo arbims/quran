@@ -42,11 +42,10 @@ class CkeditorHelper extends Helper
 
         $lines[] = $this->Html->script($ckEditorUrl);
 
-        $defaultOptions = ['type' => 'textarea', 'required' => false];
+        $defaultOptions = ['type' => 'textarea', 'required' => false, 'label' => false];
 
         $options = array_merge($defaultOptions, $options);
 
-        $lines[] = $this->Form->error($input);
         $lines[] = $this->Form->control($input, $options);
 
         $ckEditorOptions = [
