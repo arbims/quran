@@ -83,6 +83,7 @@ return static function (RouteBuilder $routes) {
         $builder->prefix('Api', function ($routes) {
             $routes->setExtensions(['json', 'xml']);
             $routes->connect('/episodes/{id}', ['controller' => 'Episodes', 'action' => 'index'])->setPass(['id'])->setPatterns(['id' => '[0-9]+']);
+            $routes->post('/episodes', ['controller' => 'Episodes', 'action' => 'add']);
         });
         $builder->setExtensions(['json', 'xml']);
 

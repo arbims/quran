@@ -78,4 +78,22 @@ class SwaggerDocController extends AppController
         $this->set(compact('message'));
         $this->viewBuilder()->setOption('serialize', ['message']);
     }
+
+        #[OA\Get(
+        path: '/api/csrf.json',
+        security: [['bearerAuth' => []]],
+        responses: [
+            new OA\Response(
+                response: 200,
+                description: "Csrf token",
+            ),
+            new OA\Response(response: 401, description: 'Not allowed'),
+        ],
+    )]
+    public function csrf()
+    {
+        $csrf = $this->request->getAttribute('csrfToken');
+        $this->set(compact('csrf'));
+        $this->viewBuilder()->setOption('serialize', ['csrf']);
+    }
 }

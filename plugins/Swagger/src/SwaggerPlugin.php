@@ -49,6 +49,8 @@ class SwaggerPlugin extends BasePlugin
                 $builder->connect('/api/doc', ['controller' => 'SwaggerDoc', 'action' => 'index', 'plugin' => 'Swagger']);
                 $builder->connect('/api/demo', ['controller' => 'SwaggerDoc', 'action' => 'demo',
                     'plugin' => 'Swagger']);
+                $builder->connect('/api/csrf', ['controller' => 'SwaggerDoc', 'action' => 'csrf',
+                    'plugin' => 'Swagger']);
                 //$builder->fallbacks();
             }
         );

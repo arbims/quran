@@ -53,7 +53,8 @@ class PagesController extends AppController
 	public function index(ProgramsTable $programsTable): void {
 		$this->set('title', 'إذاعة القرآن الكريم');
 		$PostsTable = TableRegistry::getTableLocator()->get('Posts');
-		$posts = $PostsTable->find('all')->contain(['Users'])->limit(5)->orderBy(['posts.id' => 'DESC'])->toArray();
+
+		$posts = $PostsTable->find('all')->contain(['Users'])->limit(5)->orderBy(['Posts.id' => 'DESC'])->toArray();
 		$query = $programsTable->find();
 		$programs =  $query
 		->select([

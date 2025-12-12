@@ -7,6 +7,7 @@ use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use OpenApi\Attributes as OA;
 
 /**
  * Episodes Model
@@ -29,6 +30,22 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
+#[OA\Schema(
+    schema: 'EpisodesTable',
+    type: 'array',
+    items   : new OA\Items(
+        properties: [
+            new OA\Property(property: 'id', description: 'Identifiant unique de l\'episode', type: 'integer'),
+            new OA\Property(property: 'title', description: 'title episode', type: 'string'),
+            new OA\Property(property: 'slug', description: 'slug episode', type: 'string'),
+            new OA\Property(property: 'youtube id', description: 'youtube Id', type: 'string'),
+            new OA\Property(property: 'description', description: 'description episode', type: 'string'),
+            new OA\Property(property: 'online', description: 'online episode', type: 'integer'),
+            new OA\Property(property: 'created_at', description: 'yyyy-mm-dd hh:ii:ss category created', type: 'datetime'),
+            new OA\Property(property: 'updated_at', description: 'yyyy-mm-dd hh:ii:ss category updated', type: 'datetime'),
+
+        ])
+)]
 class EpisodesTable extends Table
 {
     /**
@@ -110,7 +127,8 @@ class EpisodesTable extends Table
         return $rules;
     }
 
-    public function findEpisodesProgram(int $idProgram) {
+    public function findEpisodesProgram(int $idProgram): Query\SelectQuery
+    {
         return $this->find()->where(['program_id' => $idProgram]);
     }
 }

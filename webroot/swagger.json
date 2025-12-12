@@ -11,61 +11,27 @@
         }
     ],
     "paths": {
-        "\/api\/categories": {
+        "\/api\/episodes\/{programId}.json": {
             "get": {
-                "operationId": "a0f4a186b7d1e9ee34c315f1bb15353e",
+                "operationId": "3832575498952b92e073d46a4a8ed12d",
                 "parameters": [
                     {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Page number",
-                        "required": false,
+                        "name": "programId",
+                        "in": "path",
+                        "description": "Program ID",
+                        "required": true,
                         "schema": {
-                            "type": "integer",
-                            "default": 1
+                            "type": "integer"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "list categories",
+                        "description": "list episodes of program ID",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Category"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "description": "Not allowed"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
-            "post": {
-                "operationId": "b39f7a325320c4c286be07f6074e5a4a",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application\/json": {
-                            "schema": {
-                                "$ref": "#\/components\/schemas\/FormCategory"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "create category",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/Category"
+                                    "$ref": "#\/components\/schemas\/EpisodesTable"
                                 }
                             }
                         }
@@ -81,17 +47,17 @@
                 ]
             }
         },
-        "\/api\/categories\/{id}": {
-            "put": {
-                "operationId": "74a57715b21fb0aeb3741ffbf0a96c29",
+        "\/api\/episodes.json": {
+            "post": {
+                "operationId": "a233cb3ab7d3f2d196f8332773eb35de",
                 "parameters": [
                     {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Category ID",
+                        "name": "X-CSRF-Token",
+                        "in": "header",
+                        "description": "CSRF token for security",
                         "required": true,
                         "schema": {
-                            "type": "integer"
+                            "type": "string"
                         }
                     }
                 ],
@@ -100,71 +66,21 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/FormCategory"
+                                "$ref": "#\/components\/schemas\/FormEpisode"
                             }
                         }
                     }
                 },
                 "responses": {
                     "200": {
-                        "description": "create category",
+                        "description": "create episode",
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/Category"
+                                    "$ref": "#\/components\/schemas\/EpisodesTable"
                                 }
                             }
                         }
-                    },
-                    "404": {
-                        "description": "Object Not Found"
-                    },
-                    "401": {
-                        "description": "Not allowed"
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
-            "delete": {
-                "operationId": "c16f80959f6c438343c6b7b386059d1f",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Category ID",
-                        "required": true,
-                        "schema": {
-                            "type": "integer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "create category",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "$ref": "#\/components\/schemas\/Category"
-                                }
-                            }
-                        }
-                    },
-                    "404": {
-                        "description": "Object Not Found"
                     },
                     "401": {
                         "description": "Not allowed"
@@ -194,9 +110,102 @@
                     }
                 ]
             }
+        },
+        "\/api\/csrf.json": {
+            "get": {
+                "operationId": "24846a7632cc8d2deb2c6d252db79218",
+                "responses": {
+                    "200": {
+                        "description": "Csrf token"
+                    },
+                    "401": {
+                        "description": "Not allowed"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
         }
     },
     "components": {
+        "schemas": {
+            "FormEpisode": {
+                "properties": {
+                    "title": {
+                        "description": "Episode Entity",
+                        "type": "string",
+                        "example": "My Episode Title"
+                    },
+                    "slug": {
+                        "type": "string",
+                        "example": "my-episode-title"
+                    },
+                    "youtube": {
+                        "type": "string",
+                        "example": "https:\/\/www.youtube.com\/watch?v=xxxxxxx",
+                        "nullable": true
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "A short description of the episode."
+                    },
+                    "online": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "program_id": {
+                        "type": "integer",
+                        "example": 12
+                    }
+                },
+                "type": "object"
+            },
+            "EpisodesTable": {
+                "type": "array",
+                "items": {
+                    "properties": {
+                        "id": {
+                            "description": "Identifiant unique de l'episode",
+                            "type": "integer"
+                        },
+                        "title": {
+                            "description": "title episode",
+                            "type": "string"
+                        },
+                        "slug": {
+                            "description": "slug episode",
+                            "type": "string"
+                        },
+                        "youtube id": {
+                            "description": "youtube Id",
+                            "type": "string"
+                        },
+                        "description": {
+                            "description": "description episode",
+                            "type": "string"
+                        },
+                        "online": {
+                            "description": "online episode",
+                            "type": "integer"
+                        },
+                        "created_at": {
+                            "description": "yyyy-mm-dd hh:ii:ss category created",
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "updated_at": {
+                            "description": "yyyy-mm-dd hh:ii:ss category updated",
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "type": "object"
+                }
+            }
+        },
         "securitySchemes": {
             "bearerAuth": {
                 "type": "http",

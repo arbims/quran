@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
+use OpenApi\Attributes as OA;
 
 /**
  * Episode Entity
@@ -20,17 +21,44 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Program $program
  */
+#[OA\Schema(
+    schema: 'FormEpisode',
+    properties: [
+        new OA\Property(
+            property: 'title',
+            type: 'string',
+            example: 'My Episode Title'
+        ),
+        new OA\Property(
+            property: 'slug',
+            type: 'string',
+            example: 'my-episode-title'
+        ),
+        new OA\Property(
+            property: 'youtube',
+            type: 'string',
+            example: 'https://www.youtube.com/watch?v=xxxxxxx',
+            nullable: true
+        ),
+        new OA\Property(
+            property: 'description',
+            type: 'string',
+            example: 'A short description of the episode.'
+        ),
+        new OA\Property(
+            property: 'online',
+            type: 'integer',
+            example: 1
+        ),
+        new OA\Property(
+            property: 'program_id',
+            type: 'integer',
+            example: 12
+        )
+    ]
+)]
 class Episode extends Entity
 {
-    /**
-     * Fields that can be mass assigned using newEntity() or patchEntity().
-     *
-     * Note that when '*' is set to true, this allows all unspecified fields to
-     * be mass assigned. For security purposes, it is advised to set '*' to false
-     * (or remove it), and explicitly make individual fields accessible as needed.
-     *
-     * @var array<string, bool>
-     */
     protected array $_accessible = [
         'title' => true,
         'slug' => true,
