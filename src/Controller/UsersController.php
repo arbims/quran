@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use App\Model\Table\ForumsPostsTable;
 use App\Model\Table\UsersTable;
+use Authentication\Controller\Component\AuthenticationComponent;
 use Cake\Cache\Cache;
 use Cake\Event\Event;
 use Cake\Http\Response;
@@ -18,7 +19,9 @@ use Google\Service\Bigquery\TableReference;
 /**
  * Login Controller
  *
- * @property \App\Model\Table\LoginTable $Login
+ * @property \App\Model\Table\UsersTable $Users
+ * @property AuthenticationComponent $Authentication
+ *
  */
 class UsersController extends AppController {
 

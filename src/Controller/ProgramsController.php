@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Model\Table\ProgramsTable;
+use Authentication\Controller\Component\AuthenticationComponent;
 use Cake\ORM\TableRegistry;
 
 /**
  * Programs Controller
  *
  * @property \App\Model\Table\ProgramsTable $Programs
+ * @property AuthenticationComponent $Authentication
  * @method \App\Model\Entity\Program[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ProgramsController extends AppController

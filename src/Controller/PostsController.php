@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Model\Table\PostsTable;
+use Authentication\Controller\Component\AuthenticationComponent;
 
 /**
  * Posts Controller
  *
  * @property \App\Model\Table\PostsTable $Posts
+ * @property AuthenticationComponent $Authentication
  */
 class PostsController extends AppController
 {

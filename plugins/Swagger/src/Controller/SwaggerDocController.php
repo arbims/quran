@@ -4,9 +4,14 @@ declare(strict_types=1);
 namespace Swagger\Controller;
 
 use App\Controller\AppController;
+use Authentication\Controller\Component\AuthenticationComponent;
+use Cake\Event\EventInterface;
 use Cake\View\JsonView;
 use OpenApi\Attributes as OA;
 
+/**
+ * @property AuthenticationComponent $Authentication
+ */
 #[OA\Info(version: "1.0", description: "Example swagger openApi", title: "Cakephp Api")]
 #[OA\Server(url: "http://localhost:8765")]
 #[OA\SecurityScheme(
@@ -19,6 +24,11 @@ use OpenApi\Attributes as OA;
 )]
 class SwaggerDocController extends AppController
 {
+
+    public function beforeFilter(EventInterface $event): void
+    {
+        $this->Authentication->allowUnauthenticated(['index', 'swagger', 'demo', 'csrf']);
+    }
 
     public function viewClasses(): array
     {

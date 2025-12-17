@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Swagger UI</title>
+    <link href="/swagger.ico" type="image/x-icon" rel="icon"><link href="/swagger.ico" type="image/x-icon" rel="shortcut icon">
     <link rel="stylesheet" type="text/css" href="/css/swagger-ui.css">
     <style>
         .main a {
