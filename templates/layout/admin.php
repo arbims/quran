@@ -112,6 +112,25 @@
   <?php echo $this->Html->script('../admin/js/app.js') ?>
 
   <?php echo $this->fetch('script') ?>
+<script>
+    var myElFinder = $('#elfinder').elfinder({
+    url: '/elfinder-connector', // Votre connecteur PHP
+    lang: 'fr',
+    getFileCallback: function(file) {
+        // 1. Récupérer l'ID de l'input cible via l'URL de la popup
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetId = urlParams.get('target');
+
+        // 2. Appeler la fonction de callback créée par le Helper
+        if (window.opener && window.opener['insertFile_' + targetId]) {
+            window.opener['insertFile_' + targetId](file.url);
+            window.close(); // Ferme la popup
+        } else {
+            alert('Erreur: Impossible de renvoyer l\'image vers l\'éditeur.');
+        }
+    }
+}).elfinder('instance');
+</script>
 </body>
 
 </html>

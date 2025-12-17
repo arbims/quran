@@ -35,7 +35,7 @@
         <div class="form-group row">
           <div class="col-sm-12">
             <?= $this->Form->label('description', 'المحتوي ', ['class' => 'col-form-label']) ?>
-            <?php echo $this->Ckeditor->input('description', ['label' => false]) ?>
+            <?php echo $this->Trix->input('description') ?>
           </div>
 
         </div>
