@@ -24,7 +24,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
   <?= $this->Html->charset() ?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    <?= (isset($title)) ? $title . 'Quran' : 'Quran' ?>
+    <?= (isset($title)) ? $title : 'Quran' ?>
   </title>
   <?= $this->Html->meta('icon') ?>
   <?= $this->Html->meta('csrfToken', $this->request->getAttribute('csrfToken')); ?>

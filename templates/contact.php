@@ -1,5 +1,3 @@
-<?php $this->set('title', 'contact') ?>
-
 <div class="article__wrapper" style="margin-top:20px;">
   <h1 class="article__wrapper__title"><?= 'هنا بإمكانك إرسال رسالتك الخاصة الرجاء طرح السؤال بطريقة واضحة ' ?></h1>
 </div>

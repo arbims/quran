@@ -39,7 +39,7 @@ class PostsController extends AppController
    * @return void
    */
   public function index(PostsTable $postsTable): void {
-    $this->set('title', 'Liste des Articles');
+    $this->set('title', 'قائمة المقالات');
     $posts = $this->paginate($postsTable->find('all')->contain(['Users']));
     $this->set(compact('posts'));
   }
@@ -54,6 +54,7 @@ class PostsController extends AppController
   public function detail(int $id, string $slug): void
   {
     $post = $this->Posts->get($id, ['contain' => ['Users']]);
+    $this->set('title', $post['name']);
     $this->set(compact('post'));
     $this->viewBuilder()->setOption('serialize', 'post');
   }

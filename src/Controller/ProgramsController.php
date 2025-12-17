@@ -30,6 +30,7 @@ class ProgramsController extends AppController
 	}
 
 	public function index(ProgramsTable $programsTable) {
+        $this->set('title', 'قائمة البرامج');
 		$programs = $programsTable->find()->all();
 		$this->set(compact('programs'));
 	}
@@ -45,6 +46,7 @@ class ProgramsController extends AppController
 	{
 		$programTable = TableRegistry::getTableLocator()->get('Programs');
 		$program = $programTable->get($id);
+        $this->set('title', $program->title);
 		$this->set('program',$program);
 	}
 }

@@ -39,7 +39,8 @@ class ContactController extends AppController
 	public function index(): void
 	{
 		$contact = new ContactForm();
-		$this->set('contact', $contact);
+        $title = 'إتصل بنا';
+		$this->set(compact('contact', 'title'));
 		$this->render('/contact');
 	}
 
